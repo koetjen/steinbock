@@ -59,8 +59,10 @@ RUN mkdir /data
 # steinbock
 
 COPY requirements.txt /app/steinbock/requirements.txt
-RUN pip install --upgrade deepcell==0.11.0 && \
-    pip install --upgrade -r /app/steinbock/requirements.txt
+RUN pip install deepcell==0.11.0 && \
+    pip install --upgrade -r /app/steinbock/requirements.txt 
+# upgrade to deepcell installation creates version conflicts
+
 ENV TF_CPP_MIN_LOG_LEVEL="2" NO_AT_BRIDGE="1"
 
 RUN mkdir -p /opt/keras/models && \
