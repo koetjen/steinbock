@@ -59,7 +59,7 @@ RUN mkdir /data
 # steinbock
 
 COPY requirements.txt /app/steinbock/requirements.txt
-RUN pip install deepcell==0.11.0 && \
+RUN pip install --upgrade --upgrade-strategy eager deepcell==0.11.0 && \
     pip install --upgrade -r /app/steinbock/requirements.txt 
 # upgrade to deepcell installation creates version conflicts
 
