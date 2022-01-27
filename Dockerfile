@@ -9,7 +9,7 @@ ARG STEINBOCK_VERSION
 
 ENV DEBIAN_FRONTEND=noninteractive PYTHONDONTWRITEBYTECODE="1" PYTHONUNBUFFERED="1"
 
-RUN apt-get update && apt-get install -y build-essential curl git locales python3.8 python3.8-dev python3.8-venv 
+RUN apt-get update && apt-get install -y build-essential curl git locales python3.8 python3.8-dev python3.8-venv --enable-shared
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
 ENV LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8"
