@@ -46,7 +46,7 @@ RUN apt-get install -y libmysqlclient-dev libnotify-dev libsdl2-dev libwebkitgtk
 ENV JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
 
 RUN curl -SsO https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04/wxPython-4.1.0-cp38-cp38-linux_x86_64.whl && \
-     pip install --upgrade numpy wheel wxPython-4.1.0-cp38-cp38-linux_x86_64.whl && \
+     pip install --upgrade pip numpy wheel wxPython-4.1.0-cp38-cp38-linux_x86_64.whl && \
      rm wxPython-4.1.0-cp38-cp38-linux_x86_64.whl
 
 #RUN pip install --upgrade "cellprofiler==${CELLPROFILER_VERSION}"
@@ -59,8 +59,7 @@ RUN curl -SsO https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.
 # steinbock
 
 COPY requirements.txt /app/steinbock/requirements.txt
-RUN pip install --upgrade pip && \
-    pip install numpy==1.19.5 scikit-image==0.18.3 scikit-learn==1.0.2 scipy==1.7.3 tensorflow==2.5.1 tensorflow-addons==0.13.0 deepcell==0.11.0 && \
+RUN pip install --upgrade scikit-image==0.18.3 scikit-learn==1.0.2 scipy==1.7.3 tensorflow==2.5.1 tensorflow-addons==0.13.0 deepcell==0.11.0 && \
     pip install --upgrade -r /app/steinbock/requirements.txt 
 # upgrade to deepcell installation creates version conflicts
 
