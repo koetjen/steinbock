@@ -22,8 +22,7 @@ RUN ln -snf "/usr/share/zoneinfo/${TZ}" /etc/localtime && echo "${TZ}" > /etc/ti
 RUN python3 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:${PATH}"
 
-RUN mkdir /data 
-   && \
+RUN mkdir /data  && \
     chown steinbock:steinbock /data
 
 # fixuid
