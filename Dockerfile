@@ -59,7 +59,7 @@ RUN mkdir /data
 # steinbock
 
 COPY requirements.txt /app/steinbock/requirements.txt
-RUN pip install --upgrade scikit-image==0.18.3 scikit-learn==1.0.2 scipy==1.7.3 tensorflow==2.5.1 tensorflow-addons==0.13.0 deepcell==0.11.0 && \
+RUN pip install --upgrade pip scikit-image==0.18.3 scikit-learn==1.0.2 scipy==1.7.3 tensorflow==2.5.1 tensorflow-addons==0.13.0 deepcell==0.11.0 && \
     pip install --upgrade -r /app/steinbock/requirements.txt 
 # upgrade to deepcell installation creates version conflicts
 
